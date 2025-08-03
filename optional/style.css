@@ -1,0 +1,291 @@
+* {
+  font-family: courier;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+  min-height: 100%;
+  background-color: white;
+}
+
+/* Layout */
+.grid {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.grid .column {
+  position: relative;
+  overflow: hidden;
+  width: 50%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.grid .column img {
+  position: relative;
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+  opacity: 0.8;
+}
+
+.grid .column .content {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 2em;
+
+  /* Create a linear gradient background */
+  background: linear-gradient(to right, #51ffd2, #418dff);
+
+  /* Clip the background to the text */
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* Add a fallback color in case background-clip is not supported */
+  color: transparent;
+
+
+
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.grid .column .content::before,
+.grid .column .content::after {
+  pointer-events: none;
+}
+
+.grid .column h2,
+.grid .column h4 {
+  word-spacing: -0.15rem;
+  font-weight: 300;
+}
+
+.grid .column h2 span {
+  display: block;
+  font-weight: 800;
+  font-size: 2.8rem;
+  margin-top: 150px;
+}
+
+.grid .column h4 span {
+  display: block;
+  font-weight: 450;
+  font-size: 1.4rem;
+}
+
+.grid .column h2,
+.grid .column h4,
+.grid .column p {
+  margin: 0;
+}
+
+.grid .column p {
+  letter-spacing: 1px;
+  font-size: 68.5%;
+}
+
+.great {
+  font-family: "Great Vibes", cursive;
+  font-weight: 400;
+  font-size: 120px;
+  /* Create a linear gradient background */
+  background: linear-gradient(to left, #51ffd2, #418dff);
+
+  /* Clip the background to the text */
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* Add a fallback color in case background-clip is not supported */
+  color: transparent;
+
+  font-style: normal;
+}
+
+.logo {
+  display: inline;
+  position: absolute;
+  top: 6%;
+  left: 35%;
+  text-align: center;
+}
+
+.logo img {
+  max-width: 100px;
+}
+
+a {
+  text-transform: uppercase;
+  font-size: .6rem;
+  text-decoration: none;
+  color: #418dff;
+  display: block;
+  font-family: sans-serif;
+}
+
+/* hover*/
+
+.effect-hover h2,
+.effect-hover h4,
+.effect-hover h3,
+.effect-hover p,
+.effect-hover i {
+  -webkit-transition: opacity 0.35s,
+    -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+}
+
+.effect-hover .content::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 270px;
+  height: 270px;
+  /* Define the gradient for the border */
+  border-image: linear-gradient(to right, #51ffd2, #418dff) 1;
+
+  /* Set the border width and style */
+  border-width: 3px;
+  border-style: solid;
+
+  /* Set the border color (fallback color) */
+  border-color: #418dff;
+
+  content: '';
+  opacity: 0;
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  /* remove this bit if you want it to swing up */
+  -webkit-transform: translate3d(-50%, -50%, 0) rotate3d(0, 0, 1, -45deg) scale3d(0, 0, 1);
+  transform: translate3d(-50%, -50%, 0) rotate3d(0, 0, 1, -45deg) scale3d(0, 0, 1);
+}
+
+.effect-hover p:hover,
+.effect-hover p:focus {
+  opacity: 0.6;
+}
+
+/* Keeps things consistent */
+
+
+.effect-hover p,
+.effect-hover h3 {
+  opacity: 0;
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+}
+
+.effect-hover:hover .content::before {
+  opacity: 1;
+  -webkit-transform: translate3d(-50%, -50%, 0) rotate3d(0, 0, 1, -45deg) scale3d(1, 1, 1);
+  transform: translate3d(-50%, -50%, 0) rotate3d(0, 0, 1, -45deg) scale3d(1, 1, 1);
+}
+
+.effect-hover:hover h2,
+.effect-hover:hover h4 {
+  opacity: 0;
+  -webkit-transform: scale3d(0.8, 0.8, 1);
+  transform: scale3d(0.8, 0.8, 1);
+}
+
+.effect-hover:hover h3,
+.effect-hover:hover p {
+  opacity: 1;
+  margin-bottom: 50%;
+}
+
+.effect-hover:hover i {
+  -webkit-transform: scale3d(2.5, 2.5, 2);
+  transform: scale3d(2.5, 2.5, 2);
+}
+
+/* Overlays */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100vh;
+  width: 100vw;
+  display: none;
+  z-index: 99;
+  overflow-x: hidden;
+  background: #eee;
+}
+
+/* Block works too, but flex is more...flexible */
+.overlay.open {
+  display: flex;
+  background-color: transparent;
+}
+
+.overlay .grid {
+  background-color: #f4f4f4;
+}
+
+.overlay .column {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay img {
+  vertical-align: bottom;
+}
+
+.size-guide-link {
+  display: inline-block;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: .8rem;
+}
+
+.underline-link {
+  overflow: hidden;
+  padding-bottom: .5vh;
+  position: relative;
+}
+
+.underline-link::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: white;
+  -webkit-transform-origin: left;
+  transform-origin: left;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: -webkit-transform .2s ease-in-out;
+  transition: transform .2s ease-in-out;
+
+}
+
+.underline-link.active::before,
+.underline-link.hovered::before,
+.underline-link:hover::before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}

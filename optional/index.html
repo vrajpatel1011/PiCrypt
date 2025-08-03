@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>Embed or Extract</title>
+  <link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+  <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../optional/style.css">
+</head>
+
+<body>
+  <!-- partial:index.partial.html -->
+  <div class="grid">
+    <!--Left side-->
+    <a href="../embed/page1.html" id="west" class="column effect-hover">
+      <div class="content">
+        <h2><span>Embed</span></h2><br>
+        <h4><span>"Hidden within the canvas."</span></h4>
+        <h3>Hide secret image<br> in Cover image</h3>
+      </div>
+    </a>
+    <!--Right side-->
+    <a href="../extract/page2.html" id="east" class="column effect-hover">
+      <div class="content">
+        <h2><span>Extract</span></h2><br>
+        <h4></span>"Revealing visual content"</span></h4>
+        <h3>Extract original image <br>from Embedded image</h3>
+      </div>
+    </a>
+    <!--Logo-->
+    <div class="logo great">
+      PiCrypt...
+    </div>
+
+  </div>
+
+  <!--Left side content-->
+  <div id="west-overlay" class="overlay">
+    <div class="grid"></div><!--End Grid-->
+
+  </div>
+  <!--Right side content-->
+  <div id="east-overlay" class="overlay">
+    <div class="grid"></div><!--End Grid-->
+  </div>
+  <!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+  <script src="./script.js"></script>
+
+</body>
+
+</html>
